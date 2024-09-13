@@ -11,6 +11,12 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Categoria;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaDuplicadaException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaNaoEncontradaException;
 
+/**
+ * Classe que implementa as regras de negócio ligadas a Categoria
+ * @author Arthur de Sá Tenório
+ * @category Classe de negócio
+ */
+
 @Service
 public class CategoriaNegocio implements IColecaoCategoria{
     @Autowired

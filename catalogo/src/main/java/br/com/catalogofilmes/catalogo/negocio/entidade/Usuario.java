@@ -5,6 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Classe que denota os atributos de um usuário
+ * @author Arthur de Sá Tenório
+ * @category Classe de entidade básica
+ */
+
 @Entity
 public class Usuario {
     @Id

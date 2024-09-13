@@ -4,6 +4,12 @@ import java.util.List;
 
 import br.com.catalogofilmes.catalogo.negocio.entidade.Categoria;
 
+/**
+ * Classe que define os dados necessários para a requisição de edição de um filme
+ * @author Arthur de Sá Tenório
+ * @category Classe de DTO (Data Transfer Object)
+ */
+
 public class RequisicaoEditarFilme {
     private long id;
     private String nome;

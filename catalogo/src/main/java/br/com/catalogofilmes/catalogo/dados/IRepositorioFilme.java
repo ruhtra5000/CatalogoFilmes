@@ -7,6 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import br.com.catalogofilmes.catalogo.negocio.entidade.Filme;
 
+/**
+ * Interface que é responsável por interagir com o armazenamento de filmes
+ * @author Arthur de Sá Tenório
+ * @category Interface de repositório
+ */
+
 @Repository
 public interface IRepositorioFilme extends JpaRepository <Filme, Long>{
     public Filme findById (long id);

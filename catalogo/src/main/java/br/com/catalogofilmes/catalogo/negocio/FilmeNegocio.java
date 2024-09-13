@@ -13,6 +13,12 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Filme;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaNaoEncontradaException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.FilmeNaoEncontradoException;
 
+/**
+ * Classe que implementa as regras de negócio ligadas a Filme
+ * @author Arthur de Sá Tenório
+ * @category Classe de negócio
+ */
+
 @Service
 public class FilmeNegocio implements IColecaoFilme {
     @Autowired

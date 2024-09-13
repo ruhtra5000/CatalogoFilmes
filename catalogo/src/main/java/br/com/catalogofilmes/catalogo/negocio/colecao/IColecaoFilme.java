@@ -7,6 +7,12 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Filme;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaNaoEncontradaException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.FilmeNaoEncontradoException;
 
+/**
+ * Interface que define as atribuições da classe FilmeNegocio
+ * @author Arthur de Sá Tenório
+ * @category Interface de coleção
+ */
+
 public interface IColecaoFilme {
     public void adicionarFilme(String nome, String sinopse, int duracao, List<Categoria> categorias);
     public void editarFilme(long id, String nome, String sinopse, int duracao, 

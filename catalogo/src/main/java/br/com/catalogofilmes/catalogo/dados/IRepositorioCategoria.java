@@ -6,6 +6,12 @@ import org.springframework.stereotype.Repository;
 import br.com.catalogofilmes.catalogo.negocio.entidade.Categoria;
 import java.util.List;
 
+/**
+ * Interface que é responsável por interagir com o armazenamento de categorias
+ * @author Arthur de Sá Tenório
+ * @category Interface de repositório
+ */
+
 @Repository
 public interface IRepositorioCategoria extends JpaRepository<Categoria, Long> {
     public Categoria findById(long id);

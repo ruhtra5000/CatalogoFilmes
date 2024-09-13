@@ -17,8 +17,9 @@ import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioDuplicadoException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioNaoEncontradoException;
 
 /**
-* @author Arthur de Sá Tenório
-* Fachada geral do sistema, englobando ações que quaisquer usuários podem realizar.
+ * Fachada geral do sistema, englobando ações que quaisquer usuários podem realizar.
+ * @author Arthur de Sá Tenório 
+ * @category Classe de fachada
 */
 
 @Service

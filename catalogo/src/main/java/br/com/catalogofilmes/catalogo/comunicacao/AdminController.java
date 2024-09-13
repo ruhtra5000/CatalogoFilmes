@@ -2,11 +2,15 @@ package br.com.catalogofilmes.catalogo.comunicacao;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.catalogofilmes.catalogo.comunicacao.DTO.RequisicaoAdicionarCategoria;
 import br.com.catalogofilmes.catalogo.comunicacao.DTO.RequisicaoCadastroFilme;
+import br.com.catalogofilmes.catalogo.comunicacao.DTO.RequisicaoEditarCategoria;
 import br.com.catalogofilmes.catalogo.comunicacao.DTO.RequisicaoEditarFilme;
 import br.com.catalogofilmes.catalogo.comunicacao.DTO.RequisicaoEditarUsuario;
+import br.com.catalogofilmes.catalogo.negocio.entidade.Categoria;
 import br.com.catalogofilmes.catalogo.negocio.entidade.Filme;
 import br.com.catalogofilmes.catalogo.negocio.entidade.Usuario;
+import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaDuplicadaException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaNaoEncontradaException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.FilmeNaoEncontradoException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioDuplicadoException;
@@ -23,9 +27,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 /**
  * Classe responsável pelas requisições dos administradores do sistema.
@@ -127,6 +128,51 @@ public class AdminController {
         }
     }
     
+    @PostMapping("/categoria/adicionar")
+    public ResponseEntity<String> adicionarNovaCategoria (@RequestBody RequisicaoAdicionarCategoria r) {
+        try {
+            fachadaAdmin.adicionarNovaCategoria(r.getNome());
+            return ResponseEntity.ok("Categoria criada com sucesso!");
+        } 
+        catch (CategoriaDuplicadaException err) {
+            return ResponseEntity.badRequest().body(err.getMessage());
+        }
+    }
+    
+    @PatchMapping("/categoria/editar")
+    public ResponseEntity<String> editarCategoria(@RequestBody RequisicaoEditarCategoria r){
+        try {
+            fachadaAdmin.editarCategoria(r.getId(), r.getNome());
+            return ResponseEntity.ok("Edição realizada com sucesso!");
+        } 
+        catch (CategoriaNaoEncontradaException | CategoriaDuplicadaException err) {
+            return ResponseEntity.badRequest().body(err.getMessage());
+        }
+    }
 
+    @GetMapping("/categoria")
+    public List<Categoria> listarTodasCategorias () {
+        return fachadaAdmin.listarTodasCategorias();
+    }
+
+    @GetMapping("/categoria/id/{id}")
+    public Categoria listarCategoriaPorId(@PathVariable long id) {
+        try {
+            return fachadaAdmin.listarCategoriaPorId(id);
+        } 
+        catch (CategoriaNaoEncontradaException err) {
+            return null;
+        }
+    }
+
+    @GetMapping("/categoria/nome/{nome}")
+    public List<Categoria> listarCategoriaPorNome (@PathVariable String nome) {
+        try {
+            return fachadaAdmin.listarCategoriaPorNome(nome);
+        } 
+        catch (CategoriaNaoEncontradaException err) {
+            return null;
+        }
+    }
     
 }

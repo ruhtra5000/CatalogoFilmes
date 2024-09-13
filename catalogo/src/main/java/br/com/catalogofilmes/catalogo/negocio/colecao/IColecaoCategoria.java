@@ -6,6 +6,12 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Categoria;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaDuplicadaException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.CategoriaNaoEncontradaException;
 
+/**
+ * Interface que define as atribuições da classe CategoriaNegocio
+ * @author Arthur de Sá Tenório
+ * @category Interface de coleção
+ */
+
 public interface IColecaoCategoria {
     public void adicionarCategoria (String nome) throws CategoriaDuplicadaException;
     public void editarCategoria (long id, String nome) throws CategoriaNaoEncontradaException, CategoriaDuplicadaException;

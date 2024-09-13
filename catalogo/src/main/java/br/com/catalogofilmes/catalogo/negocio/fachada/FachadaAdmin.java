@@ -18,8 +18,9 @@ import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioDuplicadoException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioNaoEncontradoException;
 
 /**
- * @author Arthur de Sá Tenório
  * Fachada de administrador, definindo o ponto de acesso da administração ao sistema.
+ * @author Arthur de Sá Tenório
+ * @category Classe de fachada
  */
 
 @Service
@@ -93,12 +94,12 @@ public class FachadaAdmin {
     public List<Categoria> listarTodasCategorias(){
         return colecaoCategoria.listarTodos();
     }
+    
+    public Categoria listarCategoriaPorId(long id) throws CategoriaNaoEncontradaException {
+        return colecaoCategoria.listarPorId(id);
+    }
 
     public List<Categoria> listarCategoriaPorNome(String nome) throws CategoriaNaoEncontradaException {
         return colecaoCategoria.listarPorNome(nome);
-    }
-
-    public Categoria listarCategoriaPorId(long id) throws CategoriaNaoEncontradaException {
-        return colecaoCategoria.listarPorId(id);
     }
 }

@@ -11,6 +11,12 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Usuario;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioDuplicadoException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioNaoEncontradoException;
 
+/**
+ * Classe que implementa as regras de negócio ligadas a Usuario
+ * @author Arthur de Sá Tenório
+ * @category Classe de negócio
+ */
+
 @Service
 public class UsuarioNegocio implements IColecaoUsuario {
     @Autowired

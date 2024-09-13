@@ -6,6 +6,12 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Usuario;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioDuplicadoException;
 import br.com.catalogofilmes.catalogo.negocio.excecao.UsuarioNaoEncontradoException;
 
+/**
+ * Interface que define as atribuições da classe UsuarioNegocio
+ * @author Arthur de Sá Tenório
+ * @category Interface de coleção
+ */
+
 public interface IColecaoUsuario {
     public void cadastrarUsuario(String nome, String email, String senha, boolean admin) 
                                 throws UsuarioDuplicadoException; 

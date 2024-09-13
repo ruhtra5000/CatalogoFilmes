@@ -4,6 +4,12 @@ import java.util.List;
 
 import br.com.catalogofilmes.catalogo.negocio.entidade.Categoria;
 
+/**
+ * Classe que define os dados necessários para a requisição de cadastro de filmes
+ * @author Arthur de Sá Tenório
+ * @category Classe de DTO (Data Transfer Object)
+ */
+
 public class RequisicaoCadastroFilme {
     private String nome;
     private String sinopse;

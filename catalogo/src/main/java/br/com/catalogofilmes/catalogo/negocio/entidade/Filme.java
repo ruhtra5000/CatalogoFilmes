@@ -8,6 +8,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
+/**
+ * Classe que denota os atributos de um filme
+ * @author Arthur de Sá Tenório
+ * @category Classe de entidade básica
+ */
+
 @Entity
 public class Filme {
     @Id
