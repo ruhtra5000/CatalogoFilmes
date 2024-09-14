@@ -16,5 +16,5 @@ import br.com.catalogofilmes.catalogo.negocio.entidade.Filme;
 @Repository
 public interface IRepositorioFilme extends JpaRepository <Filme, Long>{
     public Filme findById (long id);
-    public List<Filme> findAllByNome (String nome);
+    public List<Filme> findAllByNomeContainingIgnoreCase (String nome);
 }

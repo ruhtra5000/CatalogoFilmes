@@ -16,5 +16,5 @@ import java.util.List;
 public interface IRepositorioCategoria extends JpaRepository<Categoria, Long> {
     public Categoria findById(long id);
     public Categoria findByNome(String nome);
-    public List<Categoria> findAllByNome(String nome);
+    public List<Categoria> findAllByNomeContainingIgnoreCase(String nome);
 }

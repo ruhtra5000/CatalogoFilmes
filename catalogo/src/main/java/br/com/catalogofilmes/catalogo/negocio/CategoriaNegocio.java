@@ -57,7 +57,7 @@ public class CategoriaNegocio implements IColecaoCategoria{
 
     @Override
     public List<Categoria> listarPorNome(String nome) throws CategoriaNaoEncontradaException {
-        List<Categoria> categorias = repositorioCategoria.findAllByNome(nome);
+        List<Categoria> categorias = repositorioCategoria.findAllByNomeContainingIgnoreCase(nome);
         if (categorias.isEmpty()) throw new CategoriaNaoEncontradaException();
         return categorias;
     }

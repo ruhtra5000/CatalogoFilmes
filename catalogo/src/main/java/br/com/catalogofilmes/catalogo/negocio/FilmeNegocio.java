@@ -55,7 +55,7 @@ public class FilmeNegocio implements IColecaoFilme {
 
     @Override
     public List<Filme> listarPorNome(String nome) throws FilmeNaoEncontradoException {
-        List<Filme> filmes = repositorioFilme.findAllByNome(nome);
+        List<Filme> filmes = repositorioFilme.findAllByNomeContainingIgnoreCase(nome);
         if(filmes.isEmpty()) throw new FilmeNaoEncontradoException();
         return filmes;
     }

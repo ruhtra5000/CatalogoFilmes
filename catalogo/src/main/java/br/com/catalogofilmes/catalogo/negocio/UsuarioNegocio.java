@@ -66,7 +66,7 @@ public class UsuarioNegocio implements IColecaoUsuario {
 
     @Override
     public List<Usuario> listarPorNome(String nome) throws UsuarioNaoEncontradoException{
-        List<Usuario> usuarios = repositorioUsuario.findAllByNome(nome);
+        List<Usuario> usuarios = repositorioUsuario.findAllByNomeContainingIgnoreCase(nome);
         if(usuarios.isEmpty()) 
             throw new UsuarioNaoEncontradoException();
         
